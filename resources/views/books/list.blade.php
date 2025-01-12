@@ -4,45 +4,21 @@
     <meta charset="UTF-8">
     <title>Lista książek</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        table, th, td {
-            border: 1px solid #ccc;
-        }
-        th, td {
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: #f0f0f0;
-        }
-        .container {
-            width: 80%;
-            margin: 0 auto;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
-        }
-        .cart-link {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background-color: red;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 10px;
-            text-decoration: none;
-        }
+        
     </style>
+     <br><!-- Styles -------------------------------------------------------------------->
+        <button onclick="speakText()">Mów</button>
+    <button onclick="stopSpeaking()">Zatrzymaj</button>
+    <select id="style-selector">
+        <option value="main">Standardowy</option>
+        <option value="daltonism">Dla daltonistów</option>
+        <option value="mono">Wysoki kontrast</option>
+    </select>
+    <button onclick="changeFontSize('increase')">Zwiększ czcionkę</button>
+    <button onclick="changeFontSize('decrease')">Zmniejsz czcionkę</button>
+    <link id="theme-style" href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/themeSwitcher.js') }}"></script>
+    <!-- Styles ------------------------------------------------------------------------>
 </head>
 <body>
     <a href="{{ route('cart.show') }}" class="cart-link">

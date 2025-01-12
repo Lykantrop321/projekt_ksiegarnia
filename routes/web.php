@@ -11,28 +11,23 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Auth;
 
-// Strona główna
 Route::get('/', function () {
     return view('home');
 })->name('home');
 
-// Logowanie
 Route::get('/login', function () {
     return view('login');
 })->name('login');
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])->name('login.post');
 
-// Rejestracja
 Route::get('/register', [RegisteredUserController::class, 'create'])->name('register');
 Route::post('/register', [RegisteredUserController::class, 'store'])->name('register.post');
 
-// Wylogowanie
 Route::post('/logout', function () {
     Auth::logout();
     return redirect('/');
 })->name('logout');
 
-// Strona po zalogowaniu
 Route::get('/after_login', function () {
     if (Auth::check()) {
         if (Auth::user()->hasRole('Admin')) {
@@ -45,13 +40,10 @@ Route::get('/after_login', function () {
     return redirect('/login');
 })->name('after_login');
 
-// Panel Admina
 Route::get('/admin', [AdminController::class, 'index'])->middleware('auth')->name('admin');
 
-// Panel Pracownika
 Route::get('/worker', [BookController::class, 'workerBooks'])->middleware('auth')->name('worker');
 
-// Edycja profilu
 Route::get('/profile/edit', function () {
     if (Auth::check()) {
         return view('profile.edit');
@@ -59,7 +51,6 @@ Route::get('/profile/edit', function () {
     return redirect('/login');
 })->name('profile.edit')->middleware('auth');
 
-// Trasy zarządzania użytkownikami
 Route::middleware('auth')->group(function () {
     Route::get('/user_management', [UserManagementController::class, 'index'])->name('user_management.index');
     Route::get('/user_management/create', [UserManagementController::class, 'create'])->name('user_management.create');
@@ -81,5 +72,6 @@ Route::middleware('auth')->group(function () {
     Route::post('/cart/checkout', [CartController::class, 'placeOrder'])->name('cart.checkout');
 
     Route::post('/orders/confirm/{id}', [OrderController::class, 'confirmOrder'])->name('orders.confirm');
-    Route::post('/orders/reject/{id}', [OrderController::class, 'rejectOrder'])->name('orders.reject'); // Zmieniono DELETE na POST
+    Route::post('/orders/reject/{id}', [OrderController::class, 'rejectOrder'])->name('orders.reject');
+    Route::get('/orders/details/{id}', [OrderController::class, 'showOrderDetails'])->name('order.details'); // Corrected route for showing order details
 });

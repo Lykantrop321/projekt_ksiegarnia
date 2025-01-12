@@ -3,6 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Panel Pracownika</title>
+    <br><!-- Styles -------------------------------------------------------------------->
+        <button onclick="speakText()">Mów</button>
+    <button onclick="stopSpeaking()">Zatrzymaj</button>
+    <select id="style-selector">
+        <option value="main">Standardowy</option>
+        <option value="daltonism">Dla daltonistów</option>
+        <option value="mono">Wysoki kontrast</option>
+    </select>
+    <button onclick="changeFontSize('increase')">Zwiększ czcionkę</button>
+    <button onclick="changeFontSize('decrease')">Zmniejsz czcionkę</button>
+    <link id="theme-style" href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <script src="{{ asset('js/themeSwitcher.js') }}"></script>
+    <!-- Styles ------------------------------------------------------------------------>
 </head>
 <body>
     <h1>Panel Pracownika</h1>
@@ -52,24 +65,26 @@
                 @foreach ($orders as $order)
                     <li>
                         Numer zamówienia: {{ $order->order_number }} - Łączna suma: {{ $order->total_price }} zł
+                        <a href="{{ route('order.details', ['id' => $order->id]) }}">Szczegóły zamówienia</a>
                         <form method="POST" action="{{ route('orders.confirm', $order->id) }}">
                             @csrf
                             <button type="submit">Potwierdź zamówienie</button>
                         </form>
                         <form method="POST" action="{{ route('orders.reject', $order->id) }}">
-                        @csrf
-                        <button type="submit">Odrzuć zamówienie</button>
+                            @csrf
+                            <button type="submit">Odrzuć zamówienie</button>
                         </form>
                     </li>
                 @endforeach
             </ul>
+            
 
             <form action="{{ route('logout') }}" method="POST">
                 @csrf
                 <button type="submit">Wyloguj</button>
             </form>
         @else
-            <p>Nie masz dostępu do tej sekcji. Proszę <a href="/login">zaloguj się</a> z odpowiednim kontem.</p>
+            <p>Nie masz dostępu do tej sekcji. Proszę</p>
         @endif
     @endauth
 </body>

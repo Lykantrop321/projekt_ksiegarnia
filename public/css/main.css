@@ -1,0 +1,192 @@
+/* Połączone style strony */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 40px;
+    background-color: #e6f4ea; /* Delikatny, jasnozielony kolor tła */
+    color: #1f4423; /* Ciemnozielony kolor tekstu */
+    line-height: 1.6;
+}
+
+header, footer {
+    background-color: #c8e6c9; /* Średni jasnozielony kolor tła */
+    color: #1f4423; /* Ciemnozielony kolor tekstu */
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 8px; /* Zaokrąglone rogi dla tabeli */
+    background-color: #d7eed6; /* Bardzo jasnozielone tło dla tabeli */
+}
+
+table, th, td {
+    border: 1px solid #aad6a0; /* Jasnozielony kolor obramowania */
+    border-radius: 4px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #c8e6c9; /* Jasnozielony kolor tła dla nagłówków */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #d7eed6; /* Jasnozielony kolor tła kontenera */
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    border-radius: 15px;
+}
+
+a, [href] {
+    color: #285c4d; /* Ciemnozielony kolor linków */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    background-color: #ffd966; /* Ciemnożółty kolor tła dla linku Strona główna */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+a:hover, a:focus, [href]:hover, [href]:focus {
+    color: #b3cadb; /* Jaśniejszy odcień zielonego na hover */
+    background-color: #ffcc00; /* Jaśniejszy żółty na hover dla linku Strona główna */
+}
+
+button {
+    background-color: #39796b; /* Ciemniejszy zielony dla przycisków */
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #285c4d; /* Bardzo ciemny zielony na hover */
+}
+
+.cart-link {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #39796b; /* Zielony kolor linku koszyka */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.btn-custom {
+    color: #fff;
+    background-color: #39796b; /* Ciemnozielony dla niestandardowego przycisku */
+    padding: 10px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border: 2px solid #39796b; /* Kolor ramki pasujący do tła przycisku */
+}
+
+.btn-custom:hover, .btn-custom:focus {
+    background-color: #285c4d; /* Bardzo ciemny zielony na hover */
+}
+
+/* Klasy pomocnicze */
+.text-large {
+    font-size: 1.25em;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Media Queries dla responsywności */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+    body {
+        margin: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        margin: 10px;
+    }
+    .text-large {
+        font-size: 1em; /* Zmniejszenie czcionki dla małych ekranów */
+}
+}
+#home-button {
+    color: white;
+    background-color: #86753b; /* Ciemnożółty kolor */
+    padding: 10px 20px;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#home-button:hover {
+    background-color: #ffcc00; /* Jaśniejszy żółty na hover */
+}
+
+/* Stylizacja rozwijanej listy do wyboru stylów */
+#style-selector {
+    font-family: 'Arial', sans-serif; /* Ustawienie fontu */
+    font-size: 16px; /* Wielkość czcionki */
+    padding: 8px 10px; /* Padding dookoła tekstu */
+    background-color: #f2f2f2; /* Jasne tło dla listy */
+    color: #333; /* Kolor tekstu */
+    border-radius: 5px; /* Zaokrąglone rogi */
+    border: 1px solid #ccc; /* Subtelna ramka */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Lekki cień dla głębi */
+    cursor: pointer; /* Kursor wskazujący możliwość kliknięcia */
+}
+
+#style-selector:hover {
+    background-color: #e8e8e8; /* Ciemniejsze tło przy najechaniu */
+}
+
+#style-selector:focus {
+    border-color: #4a90e2; /* Niebieska ramka przy fokusie */
+    outline: none; /* Usunięcie domyślnego konturu */
+}
+
+/* Dodatkowe style dla rozwijanej listy, które mają być wspólne dla wszystkich arkuszy */
+#style-selector {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    padding: 8px 10px;
+    background-color: #f2f2f2;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+#style-selector:hover {
+    background-color: #e8e8e8;
+}
+
+#style-selector:focus {
+    border-color: #4a90e2;
+    outline: none;
+}

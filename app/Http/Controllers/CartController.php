@@ -74,16 +74,11 @@ class CartController extends Controller
                     'quantity' => $item->quantity,
                     'unit_price' => $item->book->price
                 ]);
-                
-                // Update book stock
-                $book = Book::find($item->book_id);
-                $book->quantity -= $item->quantity;
-                $book->save();
             }
 
             Cart::where('user_id', $user_id)->delete();
         });
 
-        return redirect()->route('worker.orders')->with('success', 'Zamówienie złożone pomyślnie.');
+        return redirect()->route('cart.show')->with('success', 'Zamówienie złożone pomyślnie.');
     }
 }

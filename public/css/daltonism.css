@@ -1,0 +1,171 @@
+/* Dostosowany styl strony dla daltonistów */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 40px;
+    background-color: #f2f2f2; /* Jasny szary kolor tła dla lepszego kontrastu */
+    color: #202020; /* Ciemny szary, zapewniający wysoki kontrast */
+    line-height: 1.6;
+}
+
+header, footer {
+    background-color: #dcdcdc; /* Średni szary */
+    color: #202020; /* Ciemny szary tekst dla lepszej czytelności */
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 8px;
+    background-color: #e6e6e6; /* Bardzo jasny szary dla tła tabeli */
+}
+
+table, th, td {
+    border: 1px solid #cccccc; /* Średni szary obramowanie */
+    border-radius: 4px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #dcdcdc; /* Średni szary dla nagłówków tabeli */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #e6e6e6; /* Jasny szary dla kontenera */
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    border-radius: 15px;
+}
+
+a, [href] {
+    color: #2b669a; /* Łagodny odcień niebieskiego, łatwy do odróżnienia */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    background-color: #ccd9e8; /* Jasny niebieski tło dla linków */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+a:hover, a:focus, [href]:hover, [href]:focus {
+    color: #194481; /* Ciemniejszy odcień niebieskiego na hover */
+    background-color: #baccde;
+}
+
+button {
+    background-color: #4a90e2; /* Niebieski dla przycisków */
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #357abd; /* Ciemniejszy niebieski na hover */
+}
+
+.cart-link {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #4a90e2; /* Niebieski kolor linku koszyka */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+.btn-custom {
+    color: #fff;
+    background-color: #4a90e2; /* Niebieski dla niestandardowego przycisku */
+    padding: 10px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border: 2px solid #4a90e2; /* Kolor ramki pasujący do tła przycisku */
+}
+
+.btn-custom:hover, .btn-custom:focus {
+    background-color: #357abd; /* Bardzo ciemny niebieski na hover */
+}
+
+/* Klasy pomocnicze */
+.text-large {
+    font-size: 1.25em;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Media Queries dla responsywności */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+    body {
+        margin: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        margin: 10px;
+    }
+    .text-large {
+        font-size: 1em;
+}
+}
+
+#home-button {
+    color: white;
+    background-color: #4a90e2; /* Niebieski kolor */
+    padding: 10px 20px;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+#home-button:hover {
+    background-color: #357abd; /* Ciemniejszy niebieski na hover */
+}
+
+/* Dodatkowe style dla rozwijanej listy, które mają być wspólne dla wszystkich arkuszy */
+#style-selector {
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    padding: 8px 10px;
+    background-color: #f2f2f2;
+    color: #333;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+#style-selector:hover {
+    background-color: #e8e8e8;
+}
+
+#style-selector:focus {
+    border-color: #4a90e2;
+    outline: none;
+}

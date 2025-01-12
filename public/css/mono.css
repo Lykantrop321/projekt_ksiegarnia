@@ -1,0 +1,145 @@
+/* Dostosowany styl strony wysokiego kontrastu */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 40px;
+    background-color: #000; /* Ciemne tło dla wysokiego kontrastu */
+    color: #fff; /* Biały tekst dla wysokiego kontrastu */
+    line-height: 1.6;
+}
+
+header, footer {
+    background-color: #222; /* Bardzo ciemny szary */
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 8px;
+    background-color: #333; /* Ciemny szary dla tła tabeli */
+}
+
+table, th, td {
+    border: 1px solid #555; /* Średni szary obramowanie */
+    border-radius: 4px;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    color: #fff;
+}
+
+th {
+    background-color: #222; /* Bardzo ciemny szary dla nagłówków tabeli */
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #333; /* Ciemny szary dla kontenera */
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    border-radius: 15px;
+}
+
+a, [href] {
+    color: #ccc; /* Jasny szary dla linków */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    background-color: #444; /* Średni szary dla tła linków */
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+a:hover, a:focus, [href]:hover, [href]:focus {
+    color: #fff; /* Biały na hover */
+    background-color: #555;
+}
+
+button {
+    background-color: #555; /* Średni szary dla przycisków */
+    color: #fff;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: #777; /* Jaśniejszy szary na hover */
+}
+
+.cart-link, .btn-custom {
+    background-color: #555;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    border: 2px solid #777;
+}
+
+.btn-custom:hover, .btn-custom:focus, .cart-link:hover {
+    background-color: #777; /* Jaśniejszy szary na hover */
+}
+
+#style-selector {
+    font-family: 'Arial', sans-serif; /* Ustawienie fontu */
+    font-size: 16px; /* Wielkość czcionki */
+    padding: 8px 10px; /* Padding dookoła tekstu */
+    background-color: #333; /* Ciemniejsze tło dla lepszej widoczności */
+    color: #fff; /* Biały tekst dla wysokiego kontrastu */
+    border-radius: 5px; /* Zaokrąglone rogi */
+    border: 1px solid #555; /* Ramka */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Subtelny cień */
+    cursor: pointer; /* Kursor 'pointer' dla interaktywności */
+}
+
+#style-selector:hover {
+    background-color: #444; /* Ciemniejsze tło przy najechaniu */
+}
+
+#style-selector:focus {
+    border-color: #888; /* Jaśniejsza ramka przy fokusie */
+    outline: none; /* Usunięcie domyślnego konturu */
+}
+
+/* Klasy pomocnicze */
+.text-large {
+    font-size: 1.25em;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Media Queries dla responsywności */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+    body {
+        margin: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        margin: 10px;
+    }
+    .text-large {
+        font-size: 1em;
+    }
+}
