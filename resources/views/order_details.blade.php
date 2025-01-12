@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Szczegóły zamówienia</title>
+    <a href="{{ route('worker') }}" id="home-button">Strona główna</a> 
     <br><!-- Styles -------------------------------------------------------------------->
         <button onclick="speakText()">Mów</button>
     <button onclick="stopSpeaking()">Zatrzymaj</button>
@@ -29,7 +30,7 @@
     <a href="{{ route('worker') }}">Powrót do panelu pracownika</a>
     </form>
         @else
-            <p>Nie masz dostępu do tej sekcji. Proszę</p>
+            <p>Nie masz dostępu do tej sekcji.</p>
         @endif
     @endauth
 </body>

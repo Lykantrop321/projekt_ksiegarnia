@@ -169,3 +169,98 @@ button:hover {
     border-color: #4a90e2;
     outline: none;
 }
+
+#order-info {
+    text-align: center;
+    font-size: 1.2em;
+    color: #555;
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-style: italic;
+}
+
+input[type="text"],
+input[type="number"],
+button {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #999; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); 
+    outline: none;
+}
+
+button {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover {
+    border-color: #999;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Stylizacja inputów */
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"] {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Stylizacja inputów po uzyskaniu fokusu */
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #999;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+.styled-select {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    padding: 10px; /* Padding wewnętrzny */
+    background-color: #f2f2f2; /* Jasne tło */
+    color: #333; /* Kolor tekstu */
+    border-radius: 5px; /* Zaokrąglone rogi */
+    border: 1px solid #ccc; /* Subtelna ramka */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Lekki cień */
+    cursor: pointer; /* Wskaźnik, który sugeruje możliwość interakcji */
+    width: 100%; /* Ustawienie szerokości na 100% kontenera */
+    max-width: 400px; /* Maksymalna szerokość */
+    margin-top: 10px; /* Odstęp od elementu powyżej */
+}
+
+.styled-select:hover {
+    background-color: #e8e8e8; /* Ciemniejsze tło na hover */
+}
+
+.styled-select:focus {
+    border-color: #4a90e2; /* Niebieska ramka przy fokusu */
+    outline: none; /* Usunięcie domyślnego konturu */
+}

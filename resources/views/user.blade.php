@@ -19,12 +19,38 @@
 </head>
 <body>
     <h1>Panel Użytkownika</h1>
-    <p>Witaj, {{ Auth::user()->name }}! Masz dostęp jako Użytkownik.</p>
-    <a href="/cart">Twój Koszyk</a>
-    <a href="/orders">Twoje Zamówienia</a>
-    <form action="{{ route('logout') }}" method="POST">
-        @csrf
-        <button type="submit">Wyloguj</button>
-    </form>
+    @auth
+        @if(Auth::user()->hasRole('User'))
+            <p>Witaj, {{ Auth::user()->name }}! Masz dostęp jako Użytkownik.</p>
+            <a href="/cart">Twój Koszyk</a>
+            <a href="/orders">Twoje Zamówienia</a>
+
+            <h2>Lista Książek</h2>
+            <ul>
+                @foreach ($books as $book)
+                    <li>
+                        <strong>{{ $book->title }}</strong> by {{ $book->author }} - {{ $book->price }} zł, Dostępnych: {{ $book->quantity }}
+                    </li>
+                @endforeach
+            </ul>
+
+            <h2>Twoje Zamówienia</h2>
+            <ul>
+                @foreach ($orders as $order)
+                    <li>
+                        Numer zamówienia: {{ $order->order_number }} - Łączna suma: {{ $order->total_price }} zł
+                        <a href="{{ route('order.details', ['id' => $order->id]) }}">Szczegóły zamówienia</a>
+                    </li>
+                @endforeach
+            </ul>
+
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit">Wyloguj</button>
+            </form>
+        @else
+            <p>Nie masz dostępu do tej sekcji</p>
+        @endif
+    @endauth
 </body>
 </html>

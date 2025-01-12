@@ -61,30 +61,32 @@
             </form>
 
             <h2>Zamówienia do potwierdzenia</h2>
-            <ul>
-                @foreach ($orders as $order)
-                    <li>
-                        Numer zamówienia: {{ $order->order_number }} - Łączna suma: {{ $order->total_price }} zł
-                        <a href="{{ route('order.details', ['id' => $order->id]) }}">Szczegóły zamówienia</a>
-                        <form method="POST" action="{{ route('orders.confirm', $order->id) }}">
-                            @csrf
-                            <button type="submit">Potwierdź zamówienie</button>
-                        </form>
-                        <form method="POST" action="{{ route('orders.reject', $order->id) }}">
-                            @csrf
-                            <button type="submit">Odrzuć zamówienie</button>
-                        </form>
-                    </li>
-                @endforeach
-            </ul>
-            
-
+<ul>
+    @foreach ($orders as $order)
+        <li>
+            Numer zamówienia: {{ $order->order_number }} - Łączna suma: {{ $order->total_price }} zł
+            <a href="{{ route('order.details', ['id' => $order->id]) }}">Szczegóły zamówienia</a>
+            <form method="POST" action="{{ route('orders.confirm', $order->id) }}">
+                @csrf
+                <button type="submit">Potwierdź zamówienie</button>
+            </form>
+            <form method="POST" action="{{ route('orders.reject', $order->id) }}">
+                @csrf
+                <button type="submit">Zarchiwizuj zamówienie</button>
+            </form>
+            <form method="POST" action="{{ route('orders.reject', $order->id) }}">
+                @csrf
+                <button type="submit">Odrzuć zamówienie</button>
+            </form>
+        </li>
+    @endforeach
+</ul>       
             <form action="{{ route('logout') }}" method="POST">
                 @csrf
                 <button type="submit">Wyloguj</button>
             </form>
         @else
-            <p>Nie masz dostępu do tej sekcji. Proszę</p>
+            <p>Nie masz dostępu do tej sekcji</p>
         @endif
     @endauth
 </body>

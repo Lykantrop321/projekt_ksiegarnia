@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Zarządzanie użytkownikami</title>
+    <a href="{{ route('admin') }}" id="home-button">Strona główna</a> 
     <br><!-- Styles -------------------------------------------------------------------->
         <button onclick="speakText()">Mów</button>
     <button onclick="stopSpeaking()">Zatrzymaj</button>
